@@ -1,17 +1,20 @@
 project:
   type: website
+  output-dir: docs
+  resources:
+    - .nojekyll
 
 website:
-  title: "blog-template"
+  title: "Hanwen's Data Stories"
+  site-url: https://etc5523-2026.github.io/etc5523-assignment-3-hanwen-l/
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/etc5523-2022
+        href: https://github.com/Hanwen-L
+  page-footer:
+    center: "© 2026 Hanwen Liu · Built with [Quarto](https://quarto.org)"
 format:
   html:
     theme: cosmo
     css: styles.css
-
-
-
