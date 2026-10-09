@@ -1,4 +1,118 @@
 /* css styles */
-.navbar-dark, .quarto-title-banner {
-  background-color: #006DAE;
+
+/* Fonts: a serif for headings, a clean sans-serif for body text */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:wght@600;700&display=swap");
+
+:root {
+  --page-bg: #faf7f2;      /* warm off-white, softer than pure white */
+  --text: #2d2a26;         /* near-black body text */
+  --muted: #5f5850;        /* dates, descriptions */
+  --heading: #9a3412;      /* deep ember for headings */
+  --link: #0e6b78;         /* dark teal links, contrasts with the ember headings */
+  --link-hover: #9a3412;
+  --navbar-bg: #2b2622;    /* dark charcoal navbar */
+  --banner-bg: #7c2d12;    /* dark ember title banner */
+  --on-dark: #faf7f2;      /* text on navbar and banner */
+  --rule: #e7dfd3;         /* borders and dividers */
+}
+
+/* Page background and body text */
+body {
+  background-color: var(--page-bg);
+  color: var(--text);
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.075rem;
+  line-height: 1.65;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--heading);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700;
+}
+
+h2 {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+}
+
+/* Links */
+a {
+  color: var(--link);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navbar-bg);
+}
+
+.navbar .navbar-title,
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .bi {
+  color: var(--on-dark);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #f4b183;
+}
+
+/* Title banner on the home page and blog posts */
+.quarto-title-banner {
+  background-color: var(--banner-bg);
+  color: var(--on-dark);
+}
+
+.quarto-title-banner h1,
+.quarto-title-banner .title,
+.quarto-title-banner .subtitle,
+.quarto-title-banner .quarto-title-meta-heading,
+.quarto-title-banner .quarto-title-meta-contents,
+.quarto-title-banner a {
+  color: var(--on-dark);
+}
+
+.quarto-title-banner .quarto-category {
+  color: var(--on-dark);
+  border-color: rgba(250, 247, 242, 0.6);
+}
+
+/* Blog listing on the home page */
+.quarto-post .listing-title,
+.quarto-post .listing-title a {
+  color: var(--heading);
+}
+
+.quarto-post .listing-title a:hover {
+  color: var(--link);
+}
+
+.quarto-listing-default .listing-date,
+.quarto-listing-default .listing-description,
+.quarto-listing-default .listing-author {
+  color: var(--muted);
+}
+
+.quarto-post {
+  border-bottom: 1px solid var(--rule);
+}
+
+div.quarto-post .listing-categories .listing-category {
+  color: var(--heading);
+  border-color: var(--heading);
+}
+
+/* Footer */
+.nav-footer {
+  background-color: var(--page-bg);
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
 }
