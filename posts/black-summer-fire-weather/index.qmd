@@ -1,0 +1,90 @@
+---
+title: "Was Black Summer a freak event?"
+description: "Climate scientists compared the fire weather of Australia's 2019/20 season with the climate of a century ago. Here is what they found, in plain language."
+author: "Hanwen Liu"
+date: "2026-10-11"
+categories: [climate, bushfires, data story]
+bibliography: references.bib
+execute:
+  echo: false
+  warning: false
+  message: false
+tbl-cap-location: top
+---
+
+<!--
+Audience: members of the public who follow climate news, with no background
+in climate science or statistics.
+
+Rubric map
+  Problem description (2)  -> "Freak event, or a sign of things to come?"
+  Analysis (10)            -> "Where the evidence comes from" + "What the scientists found"
+  Conclusion (5)           -> "So, what does this mean?"
+  Figure + cross-ref       -> @fig-...   (step 7)
+  Table + cross-ref        -> @tbl-...   (step 8)
+  Academic citation        -> [@vanoldenborgh2021] and others
+
+A2 feedback to act on
+  - Explain FWI and ERA5 in plain words the first time they appear.
+  - Mention the method once, briefly; do not repeat the protocol.
+  - Start every paragraph with a clear topic sentence; no metaphors.
+-->
+
+## Freak event, or a sign of things to come?
+
+Australia's 2019/20 bushfire season, now known as Black Summer, was one of the most destructive the country has experienced. Fires burned at least 19.4 million hectares, killed 34 people directly and destroyed around 5,900 homes and other buildings [@vanoldenborgh2021]. The harm reached well beyond the fire zones: in New South Wales, emergency-department visits for asthma and breathing problems rose by 34% in the week from 30 December 2019.
+
+Once the fires were out, one question kept coming up in the news: was Black Summer a freak event, or a sign that climate change is making seasons like it more likely? This post explains what one scientific study found when it set out to answer that question.
+
+The study looks only at the weather side of bushfire risk. A bushfire also needs something to start it and fuel to burn, and how it spreads depends on the landscape and on how it is fought. None of those are covered here. What the study measures is fire weather: the hot, dry and windy conditions that help a fire spread once it has started. So it can tell us whether conditions like 2019/20 have become more common, but not whether climate change caused any particular fire.
+
+## Where the evidence comes from
+
+The evidence comes from a peer-reviewed study by an international team of climate scientists, published in 2021 in the journal *Natural Hazards and Earth System Sciences* [@vanoldenborgh2021]. The team focused on south-eastern Australia, covering eastern New South Wales and eastern Victoria where many of the largest fires burned, and on the fire season from September to February.
+
+To measure fire weather, the scientists used the **Fire Weather Index (FWI)**. The FWI is a daily score of how easily a fire could spread, calculated from four everyday weather readings: temperature, humidity, wind speed and rainfall. A higher score means more dangerous conditions. For each fire season, the team picked out the most dangerous week of fire weather, and they checked that seasons with a worse week by this measure have also tended to see more land burn.
+
+The weather readings come from **ERA5**, a reconstruction of past weather produced by the European Centre for Medium-Range Weather Forecasts [@hersbach2019]. ERA5 combines observations from weather stations, satellites, weather balloons and ships with a forecasting model that fills in the gaps, giving a consistent day-by-day record for the whole region from 1979 onwards. Because four decades is a short record, the team also used Australian temperature records going back to 1910 and computer simulations of the climate from several research groups.
+
+The method rests on a single comparison. The team estimated how often fire weather as bad as 2019/20 should be expected in today's climate, and how often it would have been expected in the cooler climate of around 1900, before most of the warming caused by people. Dividing one by the other gives the number at the heart of this post: how many times more likely a season like Black Summer has become.
+
+## What the scientists found
+
+### Black Summer broke the fire-weather record
+
+<!-- Figure (step 7): fire weather each season since 1979, 2019/20 highlighted.
+  Cross-reference it in the text with @fig-... -->
+
+[TODO: finding 1 and figure]
+
+### How much more likely is a season like it now?
+
+<!-- Table (step 8): "how many times more likely than around 1900", in plain units.
+  Cross-reference it in the text with @tbl-... -->
+
+[TODO: finding 2 and table]
+
+### Heat, not drought, is behind the trend
+
+[TODO: finding 3]
+
+### What these numbers can and can't tell us
+
+<!-- Limitations: short record, models understate the change, weather only. -->
+
+[TODO: limitations]
+
+## So, what does this mean?
+
+<!-- Conclusion (step 10)
+  - Answer the opening question directly.
+  - Summarise the findings in two or three sentences.
+  - What it means for readers; link to wider evidence (e.g. State of the Climate 2024).
+-->
+
+[TODO: conclusion]
+
+## References
+
+::: {#refs}
+:::
