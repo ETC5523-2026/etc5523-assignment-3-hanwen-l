@@ -1,5 +1,5 @@
 ---
-title: "Hanwen's Data Stories"
+title: "ETC5523 Assignment 3"
 subtitle: "Research and data, explained in plain language."
 listing:
   contents: posts
