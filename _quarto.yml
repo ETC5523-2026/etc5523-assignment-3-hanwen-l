@@ -9,7 +9,8 @@ website:
   site-url: https://etc5523-2026.github.io/etc5523-assignment-3-hanwen-l/
   navbar:
     right:
-      - about.qmd
+      - href: about.qmd
+        text: About
       - icon: github
         href: https://github.com/Hanwen-L
   page-footer:

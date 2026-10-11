@@ -110,6 +110,25 @@ div.quarto-post .listing-categories .listing-category {
   border-color: var(--heading);
 }
 
+/* About page: left-align the bio so long paragraphs stay easy to read */
+div.quarto-about-jolla main.content {
+  text-align: left;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About page buttons */
+div.quarto-about-jolla .about-links .about-link {
+  color: var(--heading);
+  border-color: var(--heading);
+}
+
+div.quarto-about-jolla .about-links .about-link:hover {
+  color: var(--on-dark);
+  background-color: var(--heading);
+}
+
 /* Footer */
 .nav-footer {
   background-color: var(--page-bg);
