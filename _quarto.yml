@@ -5,7 +5,7 @@ project:
     - .nojekyll
 
 website:
-  title: "Hanwen's Data Stories"
+  title: "Blog"
   site-url: https://etc5523-2026.github.io/etc5523-assignment-3-hanwen-l/
   navbar:
     right:
