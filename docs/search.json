@@ -14,17 +14,52 @@
     "text": "Education\nMonash University · Master of Business Analytics · Jul 2025 – present\nNanjing Audit University · Bachelor of Management (Audit) · Sep 2021 – Jun 2025\nUniversity of Pretoria · Exchange program · Jul 2023 – Dec 2023"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog Template",
+    "objectID": "posts/black-summer-fire-weather/index.html",
+    "href": "posts/black-summer-fire-weather/index.html",
+    "title": "Was Black Summer a freak event?",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!"
+    "text": "Australia’s 2019/20 bushfire season, now known as Black Summer, was one of the most destructive the country has experienced. Fires burned at least 19.4 million hectares, killed 34 people directly and destroyed around 5,900 homes and other buildings (van Oldenborgh et al. 2021). The harm reached well beyond the fire zones: in New South Wales, emergency-department visits for asthma and breathing problems rose by 34% in the week from 30 December 2019.\nOnce the fires were out, one question kept coming up in the news: was Black Summer a freak event, or a sign that climate change is making seasons like it more likely? This post explains what one scientific study found when it set out to answer that question.\nThe study looks only at the weather side of bushfire risk. A bushfire also needs something to start it and fuel to burn, and how it spreads depends on the landscape and on how it is fought. None of those are covered here. What the study measures is fire weather: the hot, dry and windy conditions that help a fire spread once it has started. So it can tell us whether conditions like 2019/20 have become more common, but not whether climate change caused any particular fire."
+  },
+  {
+    "objectID": "posts/black-summer-fire-weather/index.html#freak-event-or-a-sign-of-things-to-come",
+    "href": "posts/black-summer-fire-weather/index.html#freak-event-or-a-sign-of-things-to-come",
+    "title": "Was Black Summer a freak event?",
+    "section": "",
+    "text": "Australia’s 2019/20 bushfire season, now known as Black Summer, was one of the most destructive the country has experienced. Fires burned at least 19.4 million hectares, killed 34 people directly and destroyed around 5,900 homes and other buildings (van Oldenborgh et al. 2021). The harm reached well beyond the fire zones: in New South Wales, emergency-department visits for asthma and breathing problems rose by 34% in the week from 30 December 2019.\nOnce the fires were out, one question kept coming up in the news: was Black Summer a freak event, or a sign that climate change is making seasons like it more likely? This post explains what one scientific study found when it set out to answer that question.\nThe study looks only at the weather side of bushfire risk. A bushfire also needs something to start it and fuel to burn, and how it spreads depends on the landscape and on how it is fought. None of those are covered here. What the study measures is fire weather: the hot, dry and windy conditions that help a fire spread once it has started. So it can tell us whether conditions like 2019/20 have become more common, but not whether climate change caused any particular fire."
+  },
+  {
+    "objectID": "posts/black-summer-fire-weather/index.html#where-the-evidence-comes-from",
+    "href": "posts/black-summer-fire-weather/index.html#where-the-evidence-comes-from",
+    "title": "Was Black Summer a freak event?",
+    "section": "Where the evidence comes from",
+    "text": "Where the evidence comes from\nThe evidence comes from a peer-reviewed study by an international team of climate scientists, published in 2021 in the journal Natural Hazards and Earth System Sciences (van Oldenborgh et al. 2021). The team focused on south-eastern Australia, covering eastern New South Wales and eastern Victoria where many of the largest fires burned, and on the fire season from September to February.\nTo measure fire weather, the scientists used the Fire Weather Index (FWI). The FWI is a daily score of how easily a fire could spread, calculated from four everyday weather readings: temperature, humidity, wind speed and rainfall. A higher score means more dangerous conditions. For each fire season, the team picked out the most dangerous week of fire weather, and they checked that seasons with a worse week by this measure have also tended to see more land burn.\nThe weather readings come from ERA5, a reconstruction of past weather produced by the European Centre for Medium-Range Weather Forecasts (Hersbach et al. 2019). ERA5 combines observations from weather stations, satellites, weather balloons and ships with a forecasting model that fills in the gaps, giving a consistent day-by-day record for the whole region from 1979 onwards. Because four decades is a short record, the team also used Australian temperature records going back to 1910 and computer simulations of the climate from several research groups.\nThe method rests on a single comparison. The team estimated how often fire weather as bad as 2019/20 should be expected in today’s climate, and how often it would have been expected in the cooler climate of around 1900, before most of the warming caused by people. Dividing one by the other gives the number at the heart of this post: how many times more likely a season like Black Summer has become."
+  },
+  {
+    "objectID": "posts/black-summer-fire-weather/index.html#what-the-scientists-found",
+    "href": "posts/black-summer-fire-weather/index.html#what-the-scientists-found",
+    "title": "Was Black Summer a freak event?",
+    "section": "What the scientists found",
+    "text": "What the scientists found\n\nBlack Summer broke the fire-weather record\n\n[TODO: finding 1 and figure]\n\n\nHow much more likely is a season like it now?\n\n[TODO: finding 2 and table]\n\n\nHeat, not drought, is behind the trend\n[TODO: finding 3]\n\n\nWhat these numbers can and can’t tell us\n\n[TODO: limitations]"
+  },
+  {
+    "objectID": "posts/black-summer-fire-weather/index.html#so-what-does-this-mean",
+    "href": "posts/black-summer-fire-weather/index.html#so-what-does-this-mean",
+    "title": "Was Black Summer a freak event?",
+    "section": "So, what does this mean?",
+    "text": "So, what does this mean?\n\n[TODO: conclusion]"
+  },
+  {
+    "objectID": "posts/black-summer-fire-weather/index.html#references",
+    "href": "posts/black-summer-fire-weather/index.html#references",
+    "title": "Was Black Summer a freak event?",
+    "section": "References",
+    "text": "References\n\n\nHersbach, Hans, Bill Bell, Paul Berrisford, et al. 2019. “Global Reanalysis: Goodbye ERA-Interim, Hello ERA5.” ECMWF Newsletter 159: 17–24.\n\n\nvan Oldenborgh, Geert Jan, Folmer Krikken, Sophie Lewis, et al. 2021. “Attribution of the Australian Bushfire Risk to Anthropogenic Climate Change.” Natural Hazards and Earth System Sciences 21 (3): 941–60."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "ETC5523 Assignment 3",
     "section": "",
-    "text": "Welcome To My Blog Template\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 18, 2022\n\n\nEmi Tanaka\n\n\n\n\n\nNo matching items"
+    "text": "Was Black Summer a freak event?\n\n\n\nclimate\n\nbushfires\n\ndata story\n\n\n\nClimate scientists compared the fire weather of Australia’s 2019/20 season with the climate of a century ago. Here is what they found, in plain language.\n\n\n\n\n\nOct 11, 2026\n\n\nHanwen Liu\n\n\n\n\n\nNo matching items"
   }
 ]

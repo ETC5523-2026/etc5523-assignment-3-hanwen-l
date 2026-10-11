@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Emi Tanaka">
-<meta name="dcterms.date" content="2022-07-18">
+<meta name="author" content="Hanwen Liu">
+<meta name="dcterms.date" content="2026-10-11">
+<meta name="description" content="Climate scientists compared the fire weather of Australia’s 2019/20 season with the climate of a century ago. Here is what they found, in plain language.">
 
-<title>Welcome To My Blog Template – Hanwen’s Data Stories</title>
+<title>Was Black Summer a freak event? – Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,7 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -85,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Hanwen’s Data Stories</span>
+    <span class="navbar-title">Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -114,9 +134,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog Template</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+      <h1 class="title">Was Black Summer a freak event?</h1>
+                  <div>
+        <div class="description">
+          Climate scientists compared the fire weather of Australia’s 2019/20 season with the climate of a century ago. Here is what they found, in plain language.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">climate</div>
+                <div class="quarto-category">bushfires</div>
+                <div class="quarto-category">data story</div>
               </div>
                   </div>
   </div>
@@ -127,14 +154,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Emi Tanaka </p>
+               <p>Hanwen Liu </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 18, 2022</p>
+        <p class="date">October 11, 2026</p>
       </div>
     </div>
     
@@ -153,10 +180,82 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
+<!--
+Audience: members of the public who follow climate news, with no background
+in climate science or statistics.
+
+Rubric map
+  Problem description (2)  -> "Freak event, or a sign of things to come?"
+  Analysis (10)            -> "Where the evidence comes from" + "What the scientists found"
+  Conclusion (5)           -> "So, what does this mean?"
+  Figure + cross-ref       -> @fig-...   (step 7)
+  Table + cross-ref        -> @tbl-...   (step 8)
+  Academic citation        -> [@vanoldenborgh2021] and others
+
+A2 feedback to act on
+  - Explain FWI and ERA5 in plain words the first time they appear.
+  - Mention the method once, briefly; do not repeat the protocol.
+  - Start every paragraph with a clear topic sentence; no metaphors.
+-->
+<section id="freak-event-or-a-sign-of-things-to-come" class="level2">
+<h2 class="anchored" data-anchor-id="freak-event-or-a-sign-of-things-to-come">Freak event, or a sign of things to come?</h2>
+<p>Australia’s 2019/20 bushfire season, now known as Black Summer, was one of the most destructive the country has experienced. Fires burned at least 19.4 million hectares, killed 34 people directly and destroyed around 5,900 homes and other buildings <span class="citation" data-cites="vanoldenborgh2021">(<a href="#ref-vanoldenborgh2021" role="doc-biblioref"><span class="nocase">van Oldenborgh et al.</span> 2021</a>)</span>. The harm reached well beyond the fire zones: in New South Wales, emergency-department visits for asthma and breathing problems rose by 34% in the week from 30 December 2019.</p>
+<p>Once the fires were out, one question kept coming up in the news: was Black Summer a freak event, or a sign that climate change is making seasons like it more likely? This post explains what one scientific study found when it set out to answer that question.</p>
+<p>The study looks only at the weather side of bushfire risk. A bushfire also needs something to start it and fuel to burn, and how it spreads depends on the landscape and on how it is fought. None of those are covered here. What the study measures is fire weather: the hot, dry and windy conditions that help a fire spread once it has started. So it can tell us whether conditions like 2019/20 have become more common, but not whether climate change caused any particular fire.</p>
+</section>
+<section id="where-the-evidence-comes-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-evidence-comes-from">Where the evidence comes from</h2>
+<p>The evidence comes from a peer-reviewed study by an international team of climate scientists, published in 2021 in the journal <em>Natural Hazards and Earth System Sciences</em> <span class="citation" data-cites="vanoldenborgh2021">(<a href="#ref-vanoldenborgh2021" role="doc-biblioref"><span class="nocase">van Oldenborgh et al.</span> 2021</a>)</span>. The team focused on south-eastern Australia, covering eastern New South Wales and eastern Victoria where many of the largest fires burned, and on the fire season from September to February.</p>
+<p>To measure fire weather, the scientists used the <strong>Fire Weather Index (FWI)</strong>. The FWI is a daily score of how easily a fire could spread, calculated from four everyday weather readings: temperature, humidity, wind speed and rainfall. A higher score means more dangerous conditions. For each fire season, the team picked out the most dangerous week of fire weather, and they checked that seasons with a worse week by this measure have also tended to see more land burn.</p>
+<p>The weather readings come from <strong>ERA5</strong>, a reconstruction of past weather produced by the European Centre for Medium-Range Weather Forecasts <span class="citation" data-cites="hersbach2019">(<a href="#ref-hersbach2019" role="doc-biblioref">Hersbach et al. 2019</a>)</span>. ERA5 combines observations from weather stations, satellites, weather balloons and ships with a forecasting model that fills in the gaps, giving a consistent day-by-day record for the whole region from 1979 onwards. Because four decades is a short record, the team also used Australian temperature records going back to 1910 and computer simulations of the climate from several research groups.</p>
+<p>The method rests on a single comparison. The team estimated how often fire weather as bad as 2019/20 should be expected in today’s climate, and how often it would have been expected in the cooler climate of around 1900, before most of the warming caused by people. Dividing one by the other gives the number at the heart of this post: how many times more likely a season like Black Summer has become.</p>
+</section>
+<section id="what-the-scientists-found" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-scientists-found">What the scientists found</h2>
+<section id="black-summer-broke-the-fire-weather-record" class="level3">
+<h3 class="anchored" data-anchor-id="black-summer-broke-the-fire-weather-record">Black Summer broke the fire-weather record</h3>
+<!-- Figure (step 7): fire weather each season since 1979, 2019/20 highlighted.
+  Cross-reference it in the text with @fig-... -->
+<p>[TODO: finding 1 and figure]</p>
+</section>
+<section id="how-much-more-likely-is-a-season-like-it-now" class="level3">
+<h3 class="anchored" data-anchor-id="how-much-more-likely-is-a-season-like-it-now">How much more likely is a season like it now?</h3>
+<!-- Table (step 8): "how many times more likely than around 1900", in plain units.
+  Cross-reference it in the text with @tbl-... -->
+<p>[TODO: finding 2 and table]</p>
+</section>
+<section id="heat-not-drought-is-behind-the-trend" class="level3">
+<h3 class="anchored" data-anchor-id="heat-not-drought-is-behind-the-trend">Heat, not drought, is behind the trend</h3>
+<p>[TODO: finding 3]</p>
+</section>
+<section id="what-these-numbers-can-and-cant-tell-us" class="level3">
+<h3 class="anchored" data-anchor-id="what-these-numbers-can-and-cant-tell-us">What these numbers can and can’t tell us</h3>
+<!-- Limitations: short record, models understate the change, weather only. -->
+<p>[TODO: limitations]</p>
+</section>
+</section>
+<section id="so-what-does-this-mean" class="level2">
+<h2 class="anchored" data-anchor-id="so-what-does-this-mean">So, what does this mean?</h2>
+<!-- Conclusion (step 10)
+  - Answer the opening question directly.
+  - Summarise the findings in two or three sentences.
+  - What it means for readers; link to wider evidence (e.g. State of the Climate 2024).
+-->
+<p>[TODO: conclusion]</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hersbach2019" class="csl-entry" role="listitem">
+Hersbach, Hans, Bill Bell, Paul Berrisford, et al. 2019. <span>“Global Reanalysis: Goodbye ERA-Interim, Hello ERA5.”</span> <em>ECMWF Newsletter</em> 159: 17–24.
+</div>
+<div id="ref-vanoldenborgh2021" class="csl-entry" role="listitem">
+<span class="nocase">van Oldenborgh, Geert Jan, Folmer Krikken, Sophie Lewis, et al.</span> 2021. <span>“Attribution of the Australian Bushfire Risk to Anthropogenic Climate Change.”</span> <em>Natural Hazards and Earth System Sciences</em> 21 (3): 941–60.
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
