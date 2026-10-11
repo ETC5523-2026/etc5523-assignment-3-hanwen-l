@@ -1,0 +1,11 @@
+indicator,evidence,comparison,best,lower,note
+Fire weather,Weather records,Today,,4,
+Fire weather,Climate models,Today,1.8,1.3,
+Fire weather,Climate models,2 °C warmer,8,4,
+Fire control difficulty,Weather records,Today,,9,
+Fire control difficulty,Climate models,Today,2,0.8,
+Fire control difficulty,Climate models,2 °C warmer,4,2,
+Extreme heat,Weather records,Today,10,,
+Extreme heat,Climate models,Today,,2,
+Dry conditions,Weather records,Today,,,No clear trend
+Dry conditions,Climate models,Today,,,No clear trend
