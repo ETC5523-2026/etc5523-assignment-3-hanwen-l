@@ -2,9 +2,16 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Hanwen Liu",
     "section": "",
-    "text": "This is a blog template for the ETC5523 Communicating with Data assessment at Monash University."
+    "text": "Hi, I’m Hanwen Liu. I’m studying a Master of Business Analytics at Monash University, after a Bachelor of Management in Audit at Nanjing Audit University.\nBefore analytics, I worked in audit. I interned on an IPO audit at Wuyige Certified Public Accountants in Shanghai, and in internal audit at Lianyungang Orient Rural Commercial Bank, where I cleaned loan write-off records and helped build credit-risk early-warning models. Both roles centred on data validation, risk analysis and internal controls.\nToday I work mostly in R, Python and SQL: collecting and cleaning data, running statistical analysis, and building maps and dashboards.\nThis blog is where I practise the other half of the job: turning research and data into short, plain-language stories that anyone can follow."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Hanwen Liu",
+    "section": "Education",
+    "text": "Education\nMonash University · Master of Business Analytics · Jul 2025 – present\nNanjing Audit University · Bachelor of Management (Audit) · Sep 2021 – Jun 2025\nUniversity of Pretoria · Exchange program · Jul 2023 – Dec 2023"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -16,7 +23,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Hanwen’s Data Stories",
+    "title": "ETC5523 Assignment 3",
     "section": "",
     "text": "Welcome To My Blog Template\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 18, 2022\n\n\nEmi Tanaka\n\n\n\n\n\nNo matching items"
   }
