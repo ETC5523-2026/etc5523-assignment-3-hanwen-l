@@ -1,6 +1,6 @@
 ---
 title: "Was Black Summer a freak event?"
-description: "Climate scientists compared the fire weather of Australia's 2019/20 season with the climate of a century ago. Here is what they found, in plain language."
+description: "Climate scientists compared the fire weather of Australia's 2019/20 season with the climate of a century ago. Here is what they found."
 author: "Hanwen Liu"
 date: "2026-10-11"
 categories: [climate, bushfires, data story]
