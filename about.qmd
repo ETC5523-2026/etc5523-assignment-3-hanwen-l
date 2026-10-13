@@ -1,8 +1,8 @@
 ---
 title: "Hanwen Liu"
 subtitle: "Master of Business Analytics"
-image: avatar.svg
-image-alt: "Hanwen Liu's initials, HL"
+image: profile.jpg
+image-alt: "Photo of Hanwen Liu standing on a clifftop above the ocean"
 about:
   template: jolla
   links:
