@@ -1,0 +1,245 @@
+---
+title: "Was Black Summer a freak event?"
+description: "Climate scientists compared the fire weather of Australia's 2019/20 season with the climate of a century ago. Here is what they found."
+author: "Hanwen Liu"
+date: "2026-10-11"
+categories: [climate, bushfires, data story]
+bibliography: references.bib
+execute:
+  echo: false
+  warning: false
+  message: false
+tbl-cap-location: top
+---
+
+## Freak event, or a sign of things to come?
+
+Australia's 2019/20 bushfire season, now known as Black Summer, was one of the most destructive the country has experienced. Fires burned at least 19.4 million hectares, killed 34 people directly and destroyed around 5,900 homes and other buildings [@vanoldenborgh2021]. The harm reached well beyond the fire zones: in New South Wales, emergency-department visits for asthma and breathing problems rose by 34% in the week from 30 December 2019.
+
+Once the fires were out, one question kept coming up in the news: was Black Summer a freak event, or a sign that climate change is making seasons like it more likely? This post explains what one scientific study found when it set out to answer that question.
+
+The study looks only at the weather side of bushfire risk. A bushfire also needs something to start it and fuel to burn, and how it spreads depends on the landscape and on how it is fought. None of those are covered here. What the study measures is fire weather: the hot, dry and windy conditions that help a fire spread once it has started. So it can tell us whether conditions like 2019/20 have become more common, but not whether climate change caused any particular fire.
+
+## Where the evidence comes from
+
+The evidence comes from a peer-reviewed study by an international team of climate scientists, published in 2021 in the journal *Natural Hazards and Earth System Sciences* [@vanoldenborgh2021]. The team focused on south-eastern Australia, covering eastern New South Wales and eastern Victoria where many of the largest fires burned, and on the fire season from September to February.
+
+To measure fire weather, the scientists used the **Fire Weather Index (FWI)**. The FWI is a daily score of how easily a fire could spread, calculated from four everyday weather readings: temperature, humidity, wind speed and rainfall. A higher score means more dangerous conditions. For each fire season, the team picked out the most dangerous week of fire weather, and they checked that seasons with a worse week by this measure have also tended to see more land burn.
+
+The weather readings come from **ERA5**, a reconstruction of past weather produced by the European Centre for Medium-Range Weather Forecasts [@hersbach2019]. ERA5 combines observations from weather stations, satellites, weather balloons and ships with a forecasting model that fills in the gaps, giving a consistent day-by-day record for the whole region from 1979 onwards. Because four decades is a short record, the team also used Australian temperature records going back to 1910 and computer simulations of the climate from several research groups.
+
+The method rests on a single comparison. The team estimated how often fire weather as bad as 2019/20 should be expected in today's climate, and how often it would have been expected in the cooler climate of around 1900, before most of the warming caused by people. Dividing one by the other gives the number at the heart of this post: how many times more likely a season like Black Summer has become.
+
+## What the scientists found
+
+### Black Summer broke the fire-weather record
+
+By the Fire Weather Index, 2019/20 was the most dangerous fire season in the ERA5 record, which goes back to 1979 [@vanoldenborgh2021]. After allowing for the warming trend, the scientists estimate that a season this extreme can now be expected about once every 31 years on average. In the climate of around 1900, it would have been rarer than once every 800 years.
+
+Those figures come with wide margins. Four decades of records is a short time in which to judge very rare events, and the "once every 31 years" estimate could lie anywhere between once every 4 years and once every 500 years. Because of that uncertainty, the scientists lean on cautious "at least" numbers, and so does the rest of this post.
+
+### How much more likely is a season like it now?
+
+```{r}
+#| label: setup
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+# Published results of van Oldenborgh et al. (2021), transcribed from the paper's
+# text (Sects. 3-5 and conclusions): https://doi.org/10.5194/nhess-21-941-2021.
+# best  = best estimate of how many times more likely (probability ratio)
+# lower = lower limit of the 95% confidence interval
+# Blank cells: the authors give no value. The paper's underlying time series were
+# published on the KNMI Climate Explorer, which was offline in October 2026.
+results <- read_csv("data/attribution_results.csv", show_col_types = FALSE)
+
+ink <- "#2d2a26"
+muted <- "#5f5850"
+page <- "#faf7f2"
+evidence_colours <- c("Weather records" = "#9a3412", "Climate models" = "#1b6fa8")
+```
+
+Every estimate in the study points the same way: fire weather as bad as Black Summer has become more likely. @fig-likelihood shows by how much. Weather records suggest that a season like 2019/20 is now at least four times as likely as it was in the early 1900s. Climate models give a smaller increase: about 1.8 times as likely, and at least 1.3 times [@vanoldenborgh2021].
+
+The scientists treat the models' number as a cautious lower limit rather than the best answer. The models underestimate how quickly the hottest days have warmed in south-eastern Australia, and that pushes their estimate down. Looking ahead, the models suggest that in a world 2 °C warmer than the early 1900s, seasons like Black Summer would be about eight times as likely. That projection comes from the only two models with suitable simulations of a warmer future, so it carries the same tendency to understate.
+
+```{r}
+#| label: fig-likelihood
+#| fig-cap: "**Every estimate shows fire weather like Black Summer becoming more likely.** How many times more likely a fire season as severe as 2019/20 is than in the early 1900s, according to weather records and climate models. Dots are best estimates; each line starts at the lowest value the study supports, and the arrow means the true value could be higher. The study gives no best estimate for the weather records, only a lower limit. Data: @vanoldenborgh2021."
+#| fig-alt: "Chart of how many times more likely Black Summer fire weather has become, on a scale from 1 (no change) to 16 times. Today, weather records show at least 4 times; climate models show about 1.8 times, at least 1.3 times. In a world 2 degrees warmer, climate models show about 8 times, at least 4 times. All estimates sit to the right of 'no change'."
+#| fig-width: 6.4
+#| fig-height: 4
+#| fig-dpi: 200
+#| out-width: 100%
+# One row per estimate; rows are placed by hand so the two groups
+# ("today" and "2 °C warmer") sit close together under their own headings.
+fire <- results |>
+  filter(indicator == "Fire weather") |>
+  mutate(
+    row = case_when(
+      comparison == "Today" & evidence == "Weather records" ~ 4,
+      comparison == "Today" & evidence == "Climate models" ~ 3,
+      comparison == "2 °C warmer" ~ 1
+    ),
+    label = if_else(is.na(best),
+                    paste0("at least ", lower, "×"),
+                    paste0("about ", best, "×, at least ", lower, "×"))
+  )
+
+group_headings <- tibble(
+  y = c(4.85, 1.85),
+  text = c("Today, compared with the early 1900s",
+           "In a world 2 °C warmer than the early 1900s")
+)
+
+arrow_end <- 20
+
+ggplot(fire, aes(y = row, colour = evidence)) +
+  # Light gridlines, skipping 1x where the "no change" line sits
+  geom_vline(xintercept = c(2, 4, 8, 16), colour = "#e7dfd3", linewidth = 0.4) +
+  # "No change" line, broken where the group headings sit
+  annotate("segment", x = 1, xend = 1, y = c(0.2, 2.3), yend = c(1.6, 4.6),
+           colour = muted, linewidth = 0.4) +
+  annotate("text", x = 1, y = 0.25, label = "no change", colour = muted,
+           size = 4, hjust = -0.1) +
+  geom_segment(aes(x = lower, xend = arrow_end, yend = row),
+               linewidth = 0.9, lineend = "round",
+               arrow = arrow(length = unit(2.5, "mm"), type = "closed")) +
+  geom_point(aes(x = lower), shape = "|", size = 6) +
+  geom_point(aes(x = best), shape = 21, size = 4, stroke = 1.2,
+             fill = page, na.rm = TRUE) +
+  geom_point(aes(x = best), size = 2.4, na.rm = TRUE) +
+  geom_text(aes(x = lower, label = label), colour = ink, size = 4.6,
+            hjust = 0, nudge_y = 0.4) +
+  geom_text(data = group_headings, aes(x = 0.75, y = y, label = text),
+            inherit.aes = FALSE, colour = ink, fontface = "bold",
+            size = 4.8, hjust = 0) +
+  scale_x_log10(breaks = c(1, 2, 4, 8, 16),
+                labels = c("1×", "2×", "4×", "8×", "16×")) +
+  scale_y_continuous(breaks = fire$row, labels = fire$evidence) +
+  scale_colour_manual(values = evidence_colours, guide = "none") +
+  coord_cartesian(xlim = c(0.75, arrow_end), ylim = c(0.2, 5), clip = "off") +
+  labs(x = "Times more likely than in the early 1900s", y = NULL) +
+  theme_minimal(base_size = 15, base_family = "Helvetica Neue") +
+  theme(
+    plot.background = element_rect(fill = page, colour = NA),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.y = element_text(colour = ink, size = 14),
+    axis.text.x = element_text(colour = muted, size = 13),
+    axis.title.x = element_text(colour = muted, margin = margin(t = 8)),
+    plot.margin = margin(8, 12, 8, 8)
+  )
+```
+
+### Heat, not drought, is behind the trend
+
+Rising heat, not a lack of rain, is what has pushed fire weather up. @tbl-indicators puts the study's four measures side by side. Both fire-weather measures have become more likely, and so has the extreme heat that feeds them: by the weather records, a week as hot as the hottest of 2019/20 is now about ten times as likely as around 1900, and the climate models agree it is at least twice as likely. Dry conditions are the exception. Neither the records nor the models show a clear trend towards drier years in the region.
+
+```{r}
+#| label: tbl-indicators
+#| tbl-cap: "**Heat has become much more likely; dry conditions show no clear trend.** How many times more likely conditions like 2019/20 are than in the early 1900s, for each of the four measures in the study. \"At least\" values are the lowest the study supports; the true value could be higher. Data: @vanoldenborgh2021."
+library(gt)
+library(tidyr)
+
+describe <- c(
+  "Fire weather" = "the most dangerous week of fire weather in the season",
+  "Fire control difficulty" = "the month when fires were hardest to bring under control",
+  "Extreme heat" = "the hottest week of the fire season",
+  "Dry conditions" = "low rainfall over the year and in the driest month"
+)
+
+# Turn each estimate into plain words
+in_words <- function(best, lower, note) {
+  case_when(
+    !is.na(note) ~ note,
+    !is.na(best) & !is.na(lower) & lower < 1 ~ paste0("about ", best, "×, but could be no change"),
+    !is.na(best) & !is.na(lower) ~ paste0("about ", best, "×, at least ", lower, "×"),
+    !is.na(best) ~ paste0("about ", best, "×"),
+    !is.na(lower) ~ paste0("at least ", lower, "×")
+  )
+}
+
+indicator_table <- results |>
+  mutate(
+    value = in_words(best, lower, note),
+    column = case_when(
+      evidence == "Weather records" ~ "records",
+      comparison == "Today" ~ "models",
+      TRUE ~ "future"
+    )
+  ) |>
+  select(indicator, column, value) |>
+  pivot_wider(names_from = column, values_from = value) |>
+  mutate(
+    future = coalesce(future, "not assessed"),
+    measure = paste0("**", indicator, "**<br>", describe[indicator])
+  ) |>
+  select(measure, records, models, future)
+
+indicator_table |>
+  gt() |>
+  fmt_markdown(columns = measure) |>
+  cols_label(
+    measure = "What was measured",
+    records = "Weather records",
+    models = "Climate models",
+    future = "Climate models, 2 °C warmer world"
+  ) |>
+  tab_spanner(label = "Today, compared with the early 1900s",
+              columns = c(records, models)) |>
+  tab_spanner(label = "Looking ahead", columns = future) |>
+  cols_width(measure ~ pct(34), everything() ~ pct(22)) |>
+  # "No clear trend" and "not assessed" read differently from an increase
+  tab_style(
+    style = cell_text(color = muted, style = "italic"),
+    locations = list(
+      cells_body(columns = records, rows = records == "No clear trend"),
+      cells_body(columns = models, rows = models == "No clear trend"),
+      cells_body(columns = future, rows = future == "not assessed")
+    )
+  ) |>
+  tab_style(style = cell_text(weight = "bold"), locations = cells_column_spanners()) |>
+  tab_options(
+    table.width = pct(100),
+    table.background.color = page,
+    table.font.names = c("Source Sans 3", "Helvetica Neue", "Arial", "sans-serif"),
+    table.font.size = px(15),
+    table.font.color = ink,
+    table.border.top.color = "transparent",
+    column_labels.font.weight = "bold",
+    column_labels.border.bottom.color = ink,
+    table_body.hlines.color = "#e7dfd3",
+    table_body.border.bottom.color = ink,
+    data_row.padding = px(8),
+    # keep gt's own styling instead of Quarto's striped Bootstrap table
+    quarto.disable_processing = TRUE
+  )
+```
+
+The scientists also checked which weather ingredient drives the change. When they removed the long-term trend from each of the four readings in turn, rising temperature explained roughly half of the increase in fire weather in two of the four climate models they examined, and about a third in another; in the fourth, falling humidity mattered most [@vanoldenborgh2021]. In the ERA5 records, temperature was again the leading factor.
+
+The very dry conditions of 2019 had other causes. Most of the rainfall shortfall came from two natural swings in the climate system that both reached record levels that year: the Indian Ocean Dipole, a difference in sea temperatures between the western and eastern Indian Ocean, and the Southern Annular Mode, a north–south shift in the band of westerly winds that circles Antarctica. The drought made 2019/20 worse, but the study found no sign that dry years like it are becoming more common in the region.
+
+### What these numbers can and can't tell us
+
+Three limits are worth keeping in mind when reading these results.
+
+- **The numbers are minimums, not best guesses.** The climate models produce too much variation from one year to the next and underestimate how fast the hottest days are warming. Both problems push their estimates down, so the real increase is probably larger than the models suggest.
+- **The fire-weather record is short.** ERA5 starts in 1979, so it covers only about 40 fire seasons. The heat results, which use temperature records back to 1910, rest on firmer ground.
+- **This is about weather, not fires.** The study leaves out how fires start, how much fuel is on the ground and how fires are managed. It shows that the weather behind Black Summer has become more likely, not that every future fire season will be as destructive.
+
+## So, what does this mean?
+
+Black Summer was an extreme season, but it was not simply bad luck. Its fire weather was the worst in four decades of records, and climate change has made weather like it at least 30% more likely than in the early 1900s, with the weather records pointing to at least four times as likely. The main reason is rising heat. The 2019 drought made things worse, but the study found no long-term drying trend behind it.
+
+These results fit with a wider body of evidence. Researchers have detected the influence of climate change on fire weather across many parts of the world [@abatzoglou2019], and Australia's Bureau of Meteorology and CSIRO report that extreme fire weather and the length of the fire season have increased across large parts of Australia since the 1950s [@bomcsiro2024].
+
+For readers in south-eastern Australia, the practical message is that a season like 2019/20 should no longer be thought of as a once-in-a-lifetime event. The climate models suggest it would become about eight times as likely as in the early 1900s if global warming reaches 2 °C, and those models tend to understate the change. How common such seasons become will depend on how much more the planet warms.
+
+## References
+
+::: {#refs}
+:::

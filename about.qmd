@@ -1,13 +1,32 @@
 ---
-title: "About"
+title: "Hanwen Liu"
+subtitle: "Master of Business Analytics"
 image: profile.jpg
+image-alt: "Photo of Hanwen Liu standing on a clifftop above the ocean"
 about:
   template: jolla
   links:
     - icon: github
-      text: Github
-      href: https://github.com/etc5523-2022
-
+      text: GitHub
+      href: https://github.com/Hanwen-L
+    - icon: house-door
+      text: Blog
+      href: https://etc5523-2026.github.io/etc5523-assignment-3-hanwen-l/
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+Hi, I'm Hanwen Liu. I'm studying a Master of Business Analytics at Monash University, after a Bachelor of Management in Audit at Nanjing Audit University.
+
+Before analytics, I worked in audit. I interned on an IPO audit at Wuyige Certified Public Accountants in Shanghai, and in internal audit at Lianyungang Orient Rural Commercial Bank, where I cleaned loan write-off records and helped build credit-risk early-warning models. Both roles centred on data validation, risk analysis and internal controls.
+
+Today I work mostly in R, Python and SQL: collecting and cleaning data, running statistical analysis, and building maps and dashboards.
+
+This blog is where I practise the other half of the job: turning research and data into short, plain-language stories that anyone can follow.
+
+## Education
+
+**Monash University** · Master of Business Analytics · Jul 2025 – present
+
+**Nanjing Audit University** · Bachelor of Management (Audit) · Sep 2021 – Jun 2025
+
+**University of Pretoria** · Exchange program · Jul 2023 – Dec 2023
+
